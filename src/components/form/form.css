@@ -1,0 +1,18 @@
+#form{
+grid-column-start: 1;
+grid-column-end: -1;
+grid-row-start: 2;
+grid-row-end: 3;
+height:10%;
+display:flex;
+justify-content: space-around;
+}
+
+#url-input{
+    width:80%;
+    height:2vh;
+}
+
+#submit{
+    height:4vh;
+}
