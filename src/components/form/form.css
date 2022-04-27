@@ -1,18 +1,19 @@
 #form{
-grid-column-start: 1;
-grid-column-end: -1;
-grid-row-start: 2;
-grid-row-end: 3;
-height:10%;
-display:flex;
-justify-content: space-around;
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
 }
-
+#url-submit{
+    margin:8px;
+}
 #url-input{
-    width:80%;
-    height:2vh;
+    width:73%;
 }
-
-#submit{
-    height:4vh;
+#radio-methods{
+    display:flex;
+    justify-items: space-around;
+}
+#body-area{
+    width:100%;
+    height:auto;
 }

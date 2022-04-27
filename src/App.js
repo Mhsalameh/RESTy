@@ -6,19 +6,27 @@ import Form from './components/form/form.js';
 import {useState} from "react"
 
 function App() {
-  const [result,setResult] = useState(
-
-  )
-  
+  const [result,setResult] = useState()
+  const [method,setMethod]= useState()
+  function updateMethod(e){
+    setMethod(e.target.value);
+  }
   function onSubmit(text){
-    let mockResults = `get ${text}`;
+    let mockResults;
+    if(method){
+      mockResults = `${method} ${text}`;
+    }
+    else{
+      mockResults = 'please select a method'
+    }
     console.log(mockResults);
     setResult(mockResults);
   }
+  
   return <>
   <Header />
-  <Form onSubmit={onSubmit}/>
-  <Results mockResults={result || ''} />
+  <Form onSubmit={onSubmit} updateMethod={updateMethod}/>
+  <Results mockResults={result || ''}/>
   <Footer />
   </>;
 }
