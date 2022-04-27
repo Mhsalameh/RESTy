@@ -10,6 +10,7 @@ function App() {
   const [method, setMethod] = useState();
   const [headers, setHeader] = useState();
   const [body, setBody] = useState();
+  const [loading, setLoad]= useState(false);
 
   function handleBodyChange(e) {
     setBody(e.target.value);
@@ -19,6 +20,7 @@ function App() {
     setMethod(e.target.value);
   }
   async function onSubmit(url) {
+    setLoad(true);
     let headerObject = {};
     let response;
     let data;
@@ -69,6 +71,7 @@ function App() {
     } else {
       setResult('please select method');
     }
+    setLoad(false);
   }
 
   return (
@@ -83,6 +86,7 @@ function App() {
         method={method || ''}
         url={result || ''}
         headers={headers || ''}
+        loading={loading}
       />
       <Footer />
     </>
