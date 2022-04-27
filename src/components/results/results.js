@@ -3,8 +3,9 @@ import JSONPretty from 'react-json-pretty';
 import 'react-json-pretty/themes/monikai.css';
 
 const Results = function (props) {
-  
+  console.log(props.loading)
   if (props.url) {
+    if(!props.loading){
     return (
         <>
         <h2 id='headers-h'>Headers</h2>
@@ -13,6 +14,12 @@ const Results = function (props) {
         <JSONPretty id='json-pretty' data={props.url}></JSONPretty>
         </>
     );
+    }
+    else{
+      return(
+      <p>loading....</p>
+      )
+    }
   }
 };
 
