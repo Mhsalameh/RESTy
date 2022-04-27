@@ -1,4 +1,4 @@
-import './form.css';
+import './form.scss';
 import { useRef } from 'react';
 const Form = function (props) {
   const resultRef = useRef();
@@ -44,7 +44,7 @@ const Form = function (props) {
               onClick={props.updateMethod}
             />
             <label>delete</label>
-            <textarea id='body-area'/>
+            <textarea id='body-area' onChange={props.handleBodyChange}  cols='50' rows='10'/>
           </div>
           <div id='url-submit'>
             <input
