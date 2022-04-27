@@ -24,6 +24,6 @@ RESty app is an API testing tool allowing a user to easily interact with APIs in
 
 ![uml diagram](./assets/UML%20-%20diagram%201.png)
 
-## [PR link](https://github.com/Mhsalameh/resty/pull/3)
+## [PR link](https://github.com/Mhsalameh/resty/pull/4)
 
 ## [live URL](https://iridescent-swan-3a2e65.netlify.app)
