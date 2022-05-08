@@ -3,7 +3,7 @@ import Footer from './components/footer/footer.js';
 import Header from './components/header/header.js';
 import Results from './components/results/results.js';
 import Form from './components/form/form.js';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   const [result, setResult] = useState();
@@ -19,6 +19,9 @@ function App() {
   function updateMethod(e) {
     setMethod(e.target.value);
   }
+  const clearData =new Promise((resolve)=>{setTimeout(resolve,20000)})
+  
+
   async function onSubmit(url) {
     setLoad(true);
     let headerObject = {};
@@ -73,7 +76,14 @@ function App() {
     }
     setLoad(false);
   }
-
+  useEffect(()=>{
+    if(result){
+    clearData.then(()=>{
+      setResult([]);
+      setHeader([]);
+    },[])
+  }
+  })
   return (
     <>
       <Header />
