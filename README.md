@@ -8,17 +8,21 @@ RESty app is an API testing tool allowing a user to easily interact with APIs in
     - get: <https://movies-js-course.herokuapp.com/tv>
     - get: <https://movies-js-course.herokuapp.com/getMovies>
     - post: <https://movies-js-course.herokuapp.com/addMovie>
+
     ```json
-      {
-    "title": "Peaky Blinders",
-    "release_date": "2013-09-12",
-    "poster_path": "/vUUqzWa2LnHIVqkaKVlVGkVcZIW.jpg",
-    "overview": "A gangster family epic set in 1919 Birmingham, England and centered on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby, who means to move up in the world.",
-    "comment": "HII"
-      }
-    ````
+    {
+      "title": "Peaky Blinders",
+      "release_date": "2013-09-12",
+      "poster_path": "/vUUqzWa2LnHIVqkaKVlVGkVcZIW.jpg",
+      "overview": "A gangster family epic set in 1919 Birmingham, England and centered on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby, who means to move up in the world.",
+      "comment": "HII"
+    }
+    ```
+
     - put: <https://movies-js-course.herokuapp.com/UPDATE/:id>
     - delete: <https://movies-js-course.herokuapp.com/DELETE/:id>
+
+- Phase 3: I used useEffect to reset the results and clear the page
 
 ## UML
 
