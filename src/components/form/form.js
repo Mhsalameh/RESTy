@@ -35,7 +35,6 @@ const Form = function (props) {
               value='put'
               onClick={props.updateMethod}
             />
-            <label>put</label>
             <input
               type='radio'
               id='delete'

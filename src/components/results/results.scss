@@ -1,10 +1,23 @@
+
 #results{
-    height: 100%;
-    align-self: center;
-    margin-top: 10px;
+    overflow:scroll;
+    height: 100vh;
+    #json-pretty{
+        width:100%;
+    }
 }
 #results-h, #headers-h{
     font-size: 1.5em;
     margin:0;
     font-weight: bold;
+}
+ul{
+    list-style-type:lower-roman;
+    .history-list:hover{
+        background-color: #999;
+        font-style:italic;
+    }
+    .history-list:active{
+        background-color: blue
+    }
 }
