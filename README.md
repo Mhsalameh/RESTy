@@ -4,7 +4,9 @@ RESty app is an API testing tool allowing a user to easily interact with APIs in
 
 - phase 1 : the base of RESty app, just redering the method and URL input
 - phase 2 : converted all css extensions to scss, render response from url requests, and also rendered headers
+
   - to test use the following routes :
+
     - get: <https://movies-js-course.herokuapp.com/tv>
     - get: <https://movies-js-course.herokuapp.com/getMovies>
     - post: <https://movies-js-course.herokuapp.com/addMovie>
@@ -23,6 +25,8 @@ RESty app is an API testing tool allowing a user to easily interact with APIs in
     - delete: <https://movies-js-course.herokuapp.com/DELETE/:id>
 
 - Phase 3: I used useEffect to reset the results and clear the page
+
+- phase 4: I used the useReducer() hook to create a state and save history of our requests
 
 ## UML
 

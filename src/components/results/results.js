@@ -3,23 +3,48 @@ import JSONPretty from 'react-json-pretty';
 import 'react-json-pretty/themes/monikai.css';
 
 const Results = function (props) {
-  console.log(props.loading)
-  if (props.url) {
-    if(!props.loading){
+  let results = props.url;
+  let methodUrl = props.history.methodUrl;
+  if (!props.loading) {
     return (
-        <>
-        <h2 id='headers-h'>Headers</h2>
-        <JSONPretty id='json-pretty' data={props.headers}></JSONPretty>
-        <h2 id='results-h'>Results</h2>
-        <JSONPretty id='json-pretty' data={props.url}></JSONPretty>
-        </>
+      <div id='result-page'>
+        <div id='history'>
+          <button onClick={props.handleClear}>clear History</button>
+          <h2 id='headers-h'>{methodUrl[0] ? 'History' : ''}</h2>
+          {/* <JSONPretty
+            id='json-pretty'
+            data={methodUrl[0]?{'method:url': methodUrl }:'history is clear'}
+          ></JSONPretty> */}
+          <ul>
+            {methodUrl.map((history, indx) => {
+              return (
+                <li
+                  className='history-list'
+                  key={indx}
+                  name={history}
+                  onClick={props.handleClick}
+                >
+                  {history}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div>
+          <h2 id='headers-h'>{props.headers ? 'Headers' : ''}</h2>
+          <JSONPretty id='json-pretty' data={props.headers}></JSONPretty>
+          <h2 id='results-h'>{results || props.error? 'Results' : ''}</h2>
+          <div id='results-json'>
+            <JSONPretty
+              id='json-pretty'
+              data={props.error ? props.error : results}
+            ></JSONPretty>
+          </div>
+        </div>
+      </div>
     );
-    }
-    else{
-      return(
-      <p>loading....</p>
-      )
-    }
+  } else {
+    return <p>loading....</p>;
   }
 };
 
